@@ -13,8 +13,8 @@ describe Ingredient do
 
   describe "#purchase_url" do
     it 'returns the purchase url of the ingredient' do
-      ingredient = Ingredient.create(name: 'Cherry Tomatoes')
-      expect(ingredient.purchase_url).to eq "https://www.google.com/#q=cherry%20tomatoes&tbm=shop"
+      ingredient = build(:ingredient, name: 'Cherry Tomatoes')
+      expect(ingredient.purchase_url).to eq "https://www.google.com/#q=cherry+tomatoes&tbm=shop"
     end
   end
 end
