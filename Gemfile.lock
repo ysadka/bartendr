@@ -102,6 +102,8 @@ GEM
     guard-rspec (2.5.4)
       guard (>= 1.1)
       rspec (~> 2.11)
+    haml (4.0.3)
+      tilt
     haml_coffee_assets (1.15.0)
       coffee-script (>= 1.0.0)
       sprockets (>= 2.0.3)
@@ -258,6 +260,7 @@ DEPENDENCIES
   foreman
   guard
   guard-rspec
+  haml
   haml_coffee_assets
   jquery-rails
   launchy
