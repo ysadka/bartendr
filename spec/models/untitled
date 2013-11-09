@@ -1,6 +1,0 @@
-require 'spec_helper'
-
-describe Glass, "validations" do
-  it {expect(subject).to validate_presence_of(:name)}
-  it {expect(subject).to validate_presence_of(:img_url)}
-end
