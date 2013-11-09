@@ -1,0 +1,17 @@
+%nav.top-bar.fixed
+  %ul.title-area
+    %li.name
+      %h1= link_to "Bartendr", root_path
+  %section.top-bar-section
+    %ul.right
+      %li.has-dropdown
+        %a{href: "#"} Ingredients
+        %ul.dropdown
+          %li=link_to 'Liqour'
+          %li=link_to 'Mixers'
+          %li=link_to 'Placeholder'
+          %li=link_to 'Placeholder'
+      %li.divider
+      %li=link_to 'Add a Drink'
+      %li.divider
+      %li= link_to 'Placeholder',  '#'

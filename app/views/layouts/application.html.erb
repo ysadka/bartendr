@@ -9,7 +9,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="ROBOTS" content="NOODP" />
-  <title><%%= app_name %></title>
+  <title>Bartendr</title>
     <!-- Uncomment to make IE8 render like IE7 -->
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
 
@@ -24,7 +24,6 @@
   <%= render 'flashes' -%>
   <%= yield %>
   <%= render 'application/footer' %>
-  <%= render 'javascript' %>
   <%= javascript_include_tag 'http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false' %>
   <%= javascript_include_tag "application" %>
 </body>
