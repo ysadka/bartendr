@@ -4,8 +4,8 @@
 //= require modernizr
 //= require backbone
 //= require foundation
-//= require snap.svg
-//= require_tree .
+//= require snap
+//= require tumbler
 
 $(document).foundation();
 

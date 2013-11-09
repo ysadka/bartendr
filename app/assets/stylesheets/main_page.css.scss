@@ -1,0 +1,47 @@
+body {
+  background: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.shape {
+  fill: none;
+  stroke: #60544F;
+}
+
+.outline, .doors {
+  fill: #F4EEE6;
+  stroke: #60544F;
+  stroke-width: 2pt;
+}
+
+.water {
+  fill: #D6EDEE;
+  stroke: #60544F;
+}
+
+.water-cut {
+  fill: #B4D6DB;
+}
+
+.milk {
+  fill: #fff;
+  stroke: #60544F;
+}
+
+.milk-cut {
+  fill: #F4EEE6;
+}
+
+.coffee {
+  fill: #60544F;
+  stroke: #60544F;
+}
+
+.coffee-cut {
+  fill: #60544F;
+}
+
+svg {
+  border: 1px solid black;
+}

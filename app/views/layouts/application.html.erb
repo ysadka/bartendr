@@ -20,10 +20,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="<%%= body_class %>">
-  <%= render 'application/nav' %>
   <%= render 'flashes' -%>
   <%= yield %>
-  <%= render 'application/footer' %>
   <%= javascript_include_tag "application" %>
 </body>
 </html>
