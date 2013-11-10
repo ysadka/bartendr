@@ -48,6 +48,24 @@ window.renderGlass = (options) ->
     grp.path(outline(0, h)).attr 'class', 'outline'
     o3 = (h - 70) / 3
     o2 = (h - 70) / 2
+
+    calculateLayers = (ingredients) ->
+      numberOfIngredients = ingredients.length
+      totalOunces = _.reduce ingredients, (memo, ingredient)-> 
+        memo + ingredient.quantity_in_ounces
+      , 0   
+      
+      ohs = []
+      cuts = []
+      for ingredient, index in ingredients
+        portionOfTotal = ingredient.quantity_in_ounces / totalOunces
+        ohs.push (h - 70) * portionOfTotal
+        previousOh = ohs[index - 1] or 0
+        cuts.push grp.path(cut(10 + previousOh, 10 + ohs[index], 0)).attr
+          fill: gradients[index]
+
+    calculateLayers options.components if options.components
+
     cover = grp.ellipse(getEll(h - 60)).attr 'class', 'water'
     if options.components
       ct1 = grp.path(cut(10, 10 + o3, 0)).attr
@@ -158,18 +176,3 @@ window.renderGlass = (options) ->
       s.cx + s.rx * Math.cos(sa)
       s.cy - s.ry * Math.sin(sa)
     ] + 'z'
-
-  calculateLayers = (ingredients) ->
-    numberOfIngredients = ingredients.length
-    totalOunces = 5 #_.reduce(ingredients, function(memo, ingredient) { return memo + ingredient.quantity_in_ounces; }, 0)
-    console.log totalOunces    
-
-    # # for ingredient, index in ingredients
-    # portionOfTotal = 0.2 # ingredient.quantity_in_ounces / totalOunces
-    # os = []
-    # os.push (h - 70) * portionOfTotal
-    # previousO = os[index - 1] or 0
-    # cuts = []
-    # cuts.push grp.path(cut(10 + previousO, 10 + os[index], 0)).attr
-    #   fill: gradients[index]
-
