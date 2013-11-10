@@ -1,5 +1,5 @@
 $ ->
-  s = Snap()
+  s = Snap($(window).width(), 800)
   p = 100 / 30
   h = 250
   x = 400
@@ -18,10 +18,10 @@ $ ->
     angle = 0
     grp = s.g().insertBefore tap
     x = $(window).width() / 2
-    y = $(window).height() / 3
-    R = $(window).width() / 10
-    r = $(window).width() / 15
-    h = $(window).height() / 2.5
+    y = 100
+    R = 250
+    r = 150
+    h = 600
     s.add f.select('g')
     grp.path(outline(0, h)).attr 'class', 'outline'
     o3 = (h - 70) / 3
