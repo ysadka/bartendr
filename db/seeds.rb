@@ -26,9 +26,14 @@ Component.create(drink: drink1, ingredient: ingredient2, quantity: 75)
 drink2 = Drink.create(name: 'mojito', glass: glass2, preparation: 'Place mint leaves in bottom of glass. Add crushed ice, Captain Morgan Original Spiced Rum, sugar, and lime juice, and muddle. Add soda water and garnish with mint leaves.')
 Component.create(drink: drink2, ingredient: ingredient1, quantity: 150)
 Component.create(drink: drink2, ingredient: ingredient3, quantity: 25)
+Component.create(drink: drink2, ingredient: ingredient9, quantity: 200)
 
 drink3 = Drink.create(name: 'rum and coke', glass: glass2, preparation: 'Pour over ice, garnish w/ a lime.')
 Component.create(drink: drink3, ingredient: ingredient1, quantity: 50)
 Component.create(drink: drink3, ingredient: ingredient4, quantity: 200)
 
-
+drink4 = Drink.create(name: 'cosmo', glass: glass1, preparation: 'Pour the vodka, triple sec, cranberry juice and lime juice into a cocktail shaker half-filled with ice cubes. Shake well, strain into a cocktail glass, and serve.')
+Component.create(drink: drink4, ingredient: ingredient5, quantity: 150)
+Component.create(drink: drink4, ingredient: ingredient6, quantity: 75)
+Component.create(drink: drink4, ingredient: ingredient7, quantity: 75)
+Component.create(drink: drink4, ingredient: ingredient8, quantity: 100)
