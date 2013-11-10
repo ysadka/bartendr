@@ -19,11 +19,11 @@ ingredient7 = Ingredient.create(name: 'Cranberry Juice', hex_color: 'e74c3c')
 ingredient8 = Ingredient.create(name: 'Lime Juice', hex_color: 'e74c3c')
 ingredient9 = Ingredient.create(name: 'Soda Water', hex_color: 'bdc3c7')
 
-drink1 = Drink.create(name: 'the nate mistake', glass: glass1, preparation: 'Accidentally put some tomatoes in rum...')
+drink1 = Drink.create(name: 'the nate mistake', glass: glass9, preparation: 'Accidentally put some tomatoes in rum...')
 Component.create(drink: drink1, ingredient: ingredient1, quantity: 250)
 Component.create(drink: drink1, ingredient: ingredient2, quantity: 75)
 
-drink2 = Drink.create(name: 'mojito', glass: glass2, preparation: 'Place mint leaves in bottom of glass. Add crushed ice, Captain Morgan Original Spiced Rum, sugar, and lime juice, and muddle. Add soda water and garnish with mint leaves.')
+drink2 = Drink.create(name: 'mojito', glass: glass3, preparation: 'Place mint leaves in bottom of glass. Add crushed ice, Captain Morgan Original Spiced Rum, sugar, and lime juice, and muddle. Add soda water and garnish with mint leaves.')
 Component.create(drink: drink2, ingredient: ingredient1, quantity: 150)
 Component.create(drink: drink2, ingredient: ingredient3, quantity: 25)
 Component.create(drink: drink2, ingredient: ingredient9, quantity: 200)
