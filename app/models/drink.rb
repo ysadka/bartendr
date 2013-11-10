@@ -5,5 +5,4 @@ class Drink < ActiveRecord::Base
   has_many :ingredients, through: :components
 
   belongs_to :glass
-  belongs_to :prep_type
 end

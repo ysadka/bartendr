@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :drink do
     name 'drink'
+    preparation 'shaken, not stirred'
     glass
-    prep_type
   end
 end
