@@ -9,19 +9,20 @@ glass8 = Glass.create(name: 'Champagne Flute', img_url: 'http://upload.wikimedia
 glass9 = Glass.create(name: 'Pint', img_url: 'http://upload.wikimedia.org/wikipedia/commons/9/93/Pint_glass.svg')
 glass10 = Glass.create(name: 'Shot', img_url: 'http://upload.wikimedia.org/wikipedia/commons/4/40/Shot_glass.svg')
 
-drink1 = Drink.create(name: 'the nate mistake', glass: glass1, preparation: 'Accidentally put some tomatoes in rum...')
 ingredient1 = Ingredient.create(name: 'Rum', hex_color: 'e67e22')
 ingredient2 = Ingredient.create(name: 'Cherry Tomatoes', hex_color: 'e74c3c')
+ingredient3 = Ingredient.create(name: 'Mint', hex_color: '2ecc71')
+ingredient4 = Ingredient.create(name: 'Coke', hex_color: '2c3e50')
+
+drink1 = Drink.create(name: 'the nate mistake', glass: glass1, preparation: 'Accidentally put some tomatoes in rum...')
 Component.create(drink: drink1, ingredient: ingredient1, quantity: 250)
 Component.create(drink: drink1, ingredient: ingredient2, quantity: 75)
 
 drink2 = Drink.create(name: 'mojito', glass: glass2, preparation: 'Place mint leaves in bottom of glass. Add crushed ice, Captain Morgan Original Spiced Rum, sugar, and lime juice, and muddle. Add soda water and garnish with mint leaves.')
-ingredient3 = Ingredient.create(name: 'Mint', hex_color: '2ecc71')
 Component.create(drink: drink2, ingredient: ingredient1, quantity: 150)
 Component.create(drink: drink2, ingredient: ingredient3, quantity: 25)
 
 drink3 = Drink.create(name: 'rum and coke', glass: glass2, preparation: 'Pour over ice, garnish w/ a lime.')
-ingredient4 = Ingredient.create(name: 'Coke', hex_color: '2c3e50')
 Component.create(drink: drink3, ingredient: ingredient1, quantity: 50)
 Component.create(drink: drink3, ingredient: ingredient4, quantity: 200)
 
