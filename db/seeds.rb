@@ -1,5 +1,13 @@
 glass1 = Glass.create(name: 'Martini', img_url: 'http://upload.wikimedia.org/wikipedia/commons/1/19/Coctail_glass.svg')
 glass2 = Glass.create(name: 'Collins', img_url: 'http://upload.wikimedia.org/wikipedia/commons/e/e4/Collins_glass_silhouette.svg')
+glass3 = Glass.create(name: 'Highball', img_url: 'http://upload.wikimedia.org/wikipedia/commons/d/db/Highball_glass_silhouette.svg')
+glass4 = Glass.create(name: 'Wineglass', img_url: 'http://upload.wikimedia.org/wikipedia/commons/7/7e/Wineglass.svg')
+glass5 = Glass.create(name: 'Yardglass', img_url: 'http://upload.wikimedia.org/wikipedia/commons/2/2a/Yardglass.svg')
+glass6 = Glass.create(name: 'Pilsner', img_url: 'http://upload.wikimedia.org/wikipedia/commons/7/7a/Pilsner_glass_silhouette.svg')
+glass7 = Glass.create(name: 'Brandy Snifter', img_url: 'http://upload.wikimedia.org/wikipedia/commons/c/cb/Brandysnifsi.svg')
+glass8 = Glass.create(name: 'Champagne Flute', img_url: 'http://upload.wikimedia.org/wikipedia/commons/3/37/Flutesil.svg')
+glass9 = Glass.create(name: 'Pint', img_url: 'http://upload.wikimedia.org/wikipedia/commons/9/93/Pint_glass.svg')
+glass10 = Glass.create(name: 'Shot', img_url: 'http://upload.wikimedia.org/wikipedia/commons/4/40/Shot_glass.svg')
 
 drink1 = Drink.create(name: 'the nate mistake', glass: glass1, preparation: 'Accidentally put some tomatoes in rum...')
 ingredient1 = Ingredient.create(name: 'Rum', hex_color: 'e67e22')
