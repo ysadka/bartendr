@@ -4,8 +4,12 @@ class DrinksController < ApplicationController
   end
 
   def show
-    @drink = Drink.where(name: params[:name].capitalize).includes(:components, :ingredients).first
+    @drink = Drink.where('name like ?', "%#{params[:name].downcase}%").includes(:components, :ingredients).first
 
-    render json: @drink, root: false
+    if @drink.nil?
+      render json: {errors: 'Drink not found'}, status: :unprocessable_entity
+    else
+      render json: @drink, root: false
+    end
   end
 end
