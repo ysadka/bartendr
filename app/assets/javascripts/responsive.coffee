@@ -39,18 +39,18 @@ renderDescription = (drink) ->
 renderIngredients = (ingredients) ->
   list = '<ul id="ingredient-list"><h2>Ingredients</h2>'
   for liquor in ingredients
-    list += "<li>#{liquor.ingredient.name} #{liquor.quantity_in_ounces} oz</li>"
+    list += "<li><a href='#{liquor.ingredient.purchase_url}'>#{liquor.ingredient.name}</a> #{liquor.quantity_in_ounces} oz</li>"
   list += '</ul>'
   $('#ingredients-container').html list
   if $(window).width() > 900
     $('#ingredients-container').css
       left: "#{($(window).width() / 2) + 200}px"
       position: 'absolute'
-      bottom: '100px'
+      top: '400px'
     $('#instructions-container').css
       position: 'absolute'
       left: "#{($(window).width() / 2) - 400}px"
-      bottom: '50px'
+      top: '400px'
 
 renderServingGlass = (glass) ->
   $('#glass-image').attr 'src', glass.img_url
