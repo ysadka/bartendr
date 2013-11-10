@@ -1,5 +1,5 @@
 window.renderGlass = (options) ->
-  s = Snap($(window).width(), 800)
+  s = Snap($(window).width(), 400)
   p = 100 / 30
   h = 250
   x = 400
@@ -60,6 +60,7 @@ window.renderGlass = (options) ->
 
     types[0]()
     pour() if options.slice is true
+    bubble()
 
   getEll = (height) ->
     ra = r + (R - r) / h * height
