@@ -29,7 +29,7 @@ window.renderGlass = (options) ->
     for component in components
       color = component.ingredient.hex_color
       rgb = color.match /.{2}/g
-      svgGradients.push "l()##{color}-##{lighten rgb}-##{color}:50-##{color}"
+      svgGradients.push "l()##{color}-##{lighten rgb}:50-##{color}:50-##{color}"
     svgGradients
 
   if options.components
