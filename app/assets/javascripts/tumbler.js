@@ -16,21 +16,21 @@ window.onload = function () {
       var top = f.select("#top"),
           bot = f.select("#bottom"),
           tap = f.select("#tap"),
-          pie = {
-              cx: f.select("#pie-chart circle").attr("cx"),
-              cy: f.select("#pie-chart circle").attr("cy"),
-              r: f.select("#pie-chart circle").attr("r"),
-              coffee: f.select("#legend text"),
-              water: f.selectAll("#legend text")[1],
-              title: f.selectAll("#legend text")[2],
-              waterBox: f.select("#legend rect:nth-child(2)")
-          },
+          // pie = {
+          //     cx: f.select("#pie-chart circle").attr("cx"),
+          //     cy: f.select("#pie-chart circle").attr("cy"),
+          //     r: f.select("#pie-chart circle").attr("r"),
+          //     coffee: f.select("#legend text"),
+          //     water: f.selectAll("#legend text")[1],
+          //     title: f.selectAll("#legend text")[2],
+          //     waterBox: f.select("#legend rect:nth-child(2)")
+          // },
           angle = 0,
           lastAngle,
           startAngle,
           closed,
           grp = s.g().insertBefore(tap);
-      f.select("#pie-chart").remove();
+      // f.select("#pie-chart").remove();
     //  f.select("#americano-area").click(//function () {
     //      chosen(0);
     //  });
@@ -52,7 +52,6 @@ window.onload = function () {
       r = $(window).width() / 15;
       h = $(window).height() / 2.5;
       s.add(f.select("g"));
-
       grp.path(outline(0, h)).attr("class", "outline");
       var o3 = (h - 70) / 3,
           o2 = (h - 70) / 2,
@@ -135,56 +134,56 @@ window.onload = function () {
           dr.attr("path", doors(val));
         }, 1500, mina.elastic);
       }
-      var pieShow = (function () {
-          var disc = s.circle(pie.cx, pie.cy, pie.r).attr({
-              fill: "#fff",
-              stroke: "#60544F"
-          }),
-          coffee = s.path().attr({
-              stroke: "#60544F",
-              strokeWidth: pie.r,
-              fill: "none"
-          }),
-          olda = 0,
-          a;
-          return function () {
-              var cof = pieCoffee,
-                  type = pieType;
-              a = 360 * cof / 2;
-              pie.waterBox.attr({
-                  fill: type == "water" ? "#d6edee" : "#fff"
-              });
-              disc.attr({
-                  fill: type == "water" ? "#d6edee" : "#fff"
-              });
-              pie.title.attr({
-                  "#text": pieTitle
-              });
-              pie.coffee.attr({
-                  "#text": "Espresso (" + Math.round(cof * 100) + "%)"
-              });
-              pie.water.attr({
-                  "#text": (type == "water" ? "Hot Water" : "Milk") + " (" + (100 - Math.round(cof * 100)) + "%)"
-              });
-              Snap.animate(olda, a, function (val) {
-                  coffee.attr({
-                      d: "M" + [pie.cx, pie.cy] +
-                         "U" + [pie.r / 2, 90 - val, 90 + val]
-                  });
-              }, 500, function () {
-                  if (cof == 1) {
-                      disc.attr({
-                          fill: "#60544F"
-                      });
-                  }
-              });
-              olda = a;
-          };
-      }());
+      // var pieShow = (function () {
+      //     var disc = s.circle(pie.cx, pie.cy, pie.r).attr({
+      //         fill: "#fff",
+      //         stroke: "#60544F"
+      //     }),
+      //     coffee = s.path().attr({
+      //         stroke: "#60544F",
+      //         strokeWidth: pie.r,
+      //         fill: "none"
+      //     }),
+      //     olda = 0,
+      //     a;
+      //     return function () {
+      //         var cof = pieCoffee,
+      //             type = pieType;
+      //         a = 360 * cof / 2;
+      //         pie.waterBox.attr({
+      //             fill: type == "water" ? "#d6edee" : "#fff"
+      //         });
+      //         disc.attr({
+      //             fill: type == "water" ? "#d6edee" : "#fff"
+      //         });
+      //         pie.title.attr({
+      //             "#text": pieTitle
+      //         });
+      //         pie.coffee.attr({
+      //             "#text": "Espresso (" + Math.round(cof * 100) + "%)"
+      //         });
+      //         pie.water.attr({
+      //             "#text": (type == "water" ? "Hot Water" : "Milk") + " (" + (100 - Math.round(cof * 100)) + "%)"
+      //         });
+      //         Snap.animate(olda, a, function (val) {
+      //             coffee.attr({
+      //                 d: "M" + [pie.cx, pie.cy] +
+      //                    "U" + [pie.r / 2, 90 - val, 90 + val]
+      //             });
+      //         }, 500, function () {
+      //             if (cof == 1) {
+      //                 disc.attr({
+      //                     fill: "#60544F"
+      //                 });
+      //             }
+      //         });
+      //         olda = a;
+      //     };
+      // }());
 
       types[0]();
       pour();
-      pieShow();
+      // pieShow();
   });
 
 

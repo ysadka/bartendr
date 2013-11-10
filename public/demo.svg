@@ -50,22 +50,24 @@
     <stop  offset="0.8139" style="stop-color:#60544F"/>
     <stop  offset="1" style="stop-color:#60544F;stop-opacity:0"/>
   </radialGradient>
-  <g id="pie-chart">
+  <!-- <g id="pie-chart">
     <circle fill="#D6EDEE" cx="735" cy="560" r="35"/>
     <path fill="#60544F" d="M746.089,527.343c-4.258-1.827-8.947-2.843-13.874-2.843v35.215L746.089,527.343z"/>
     <path fill="#60544F" d="M732.215,524.5c19.449,0,35.215,15.766,35.215,35.215s-15.766,35.215-35.215,35.215
       c-19.449,0-35.215-15.766-35.215-35.215S712.766,524.5,732.215,524.5 M732.215,523.5c-19.969,0-36.215,16.246-36.215,36.215
       s16.246,36.215,36.215,36.215s36.215-16.246,36.215-36.215S752.185,523.5,732.215,523.5L732.215,523.5z"/>
-  </g>
-  <g id="legend">
+  </g> -->
+<!--   <g id="legend">
     <rect x="785.5" y="524.5" fill="#60544F" stroke="#60544F" width="10" height="10"/>
     <rect x="785.5" y="544.5" fill="#D6EDEE" stroke="#60544F" stroke-miterlimit="10" width="10" height="10"/>
     <text transform="matrix(1 0 0 1 802.2 533.1641)" fill="#60544F" style="font: 400 12px Source Sans Pro, source-sans-pro, sans-serif">Espresso (10%)</text>
     <text transform="matrix(1 0 0 1 802.2 553.1641)" fill="#60544F" style="font: 400 12px Source Sans Pro, source-sans-pro, sans-serif">Hot Water (90%)</text>
     <text transform="matrix(1 0 0 1 695.0001 628.8398)" fill="#60544F" style="font: 300 20px Source Sans Pro, source-sans-pro, sans-serif">Americano</text>
-  </g>
-  <path fill="none" stroke="#60544F" stroke-width="3" stroke-miterlimit="10" d="M917,634.5c0,6.627-5.373,12-12,12H691
-    c-6.627,0-12-5.373-12-12v-124c0-6.627,5.373-12,12-12h214c6.627,0,12,5.373,12,12V634.5z"/>
+  </g> -->
+  <!-- LEGEND OUTLINE -->
+  <!-- <path fill="none" stroke="#60544F" stroke-width="3" stroke-miterlimit="10" d="M917,634.5c0,6.627-5.373,12-12,12H691
+    c-6.627,0-12-5.373-12-12v-124c0-6.627,5.373-12,12-12h214c6.627,0,12,5.373,12,12V634.5z"/> -->
+
   <path display="none" id="lead-target" fill="#CCC1BC" stroke="#60544F" stroke-width="3" stroke-miterlimit="10" d="M597.429,278.5L559,228.5H438
     l-37.429,50H597.429z"/>
   <line display="none" fill="none" stroke="#60544F" stroke-miterlimit="10" x1="439" y1="228.5" x2="439" y2="278.5"/>
