@@ -31,6 +31,9 @@
   <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:600' rel='stylesheet' type='text/css'>
 </head>
 <body class="<%%= body_class %>">
+  <div class="right">
+    <%= link_to 'About', '/about'%>
+  </div>
   <%= render 'flashes' -%>
   <%= yield %>
   <%= javascript_include_tag "application" %>

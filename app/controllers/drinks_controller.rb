@@ -1,5 +1,8 @@
 class DrinksController < ApplicationController
 
+  def about
+  end
+
   def index
   end
 
