@@ -161,3 +161,18 @@ window.renderGlass = (options) ->
       s.cx + s.rx * Math.cos(sa)
       s.cy - s.ry * Math.sin(sa)
     ] + 'z'
+
+  calculateLayers = (ingredients) ->
+    numberOfIngredients = ingredients.length
+    totalOunces = 5 # _.reduce(ingredients, function(ingredient) {ingredient.quantity_in_ounces}, 0)
+    # for ingredient, index in ingredients
+    portionOfTotal = 0.2 # ingredient.quantity_in_ounces / totalOunces
+    os = []
+    os.push (h - 70) * portionOfTotal
+    previousO = os[index - 1] or 0
+    cuts = []
+    cuts.push grp.path(cut(10 + previousO, 10 + os[index], 0)).attr
+      fill: gradients[index]
+
+
+
