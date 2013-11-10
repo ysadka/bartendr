@@ -32,7 +32,9 @@ window.renderGlass = (options) ->
       svgGradients.push "l()##{color}-##{lighten rgb}-##{color}:50-##{color}"
     svgGradients
 
-  gradients = setGradients(options.components) if options.components
+  if options.components
+    gradients = setGradients(options.components)
+    top_layer = options.components[options.components.length - 1]
 
   Snap.load 'demo.svg', (f) ->
     top = f.select '#top'
@@ -85,7 +87,9 @@ window.renderGlass = (options) ->
     if options.slice is true
       types[0]()
       $('.water').css 'opacity', 1
+      $('.water').attr 'fill', "##{top_layer.ingredient.hex_color}"
       pour()
+
 
   getEll = (height) ->
     ra = r + (R - r) / h * height
