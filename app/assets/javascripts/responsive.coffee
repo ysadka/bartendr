@@ -5,12 +5,15 @@ $ ->
   $('form').on 'submit', (e) ->
     e.preventDefault()
     search = $('#search-bar').val()
-    $.get "/drinks/#{encodeURIComponent(search)}", (drink) ->
+    $.get("/drinks/#{encodeURIComponent(search)}", (drink) ->
       $('svg').remove()
       window.renderGlass
         slice: true
         components: drink.components
       renderDescription drink
+    ).fail ->
+      $('svg').remove()
+      $('#svg-container').html '<br><br><p>No drinks found.</p>'
 
   $(window).on 'resize', ->
     renderTitle()

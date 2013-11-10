@@ -4,6 +4,11 @@ body, html {
   padding: 0;
 }
 
+#svg-container {
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: center;
+}
+
 .shape {
   fill: none;
   stroke: #60544F;
