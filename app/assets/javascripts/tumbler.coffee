@@ -1,4 +1,4 @@
-$ ->
+window.renderGlass = (options) ->
   s = Snap($(window).width(), 800)
   p = 100 / 30
   h = 250
@@ -18,10 +18,10 @@ $ ->
     angle = 0
     grp = s.g().insertBefore tap
     x = $(window).width() / 2
-    y = 100
-    R = 250
-    r = 150
-    h = 600
+    y = 75
+    R = 120
+    r = 92
+    h = 280
     s.add f.select('g')
     grp.path(outline(0, h)).attr 'class', 'outline'
     o3 = (h - 70) / 3
@@ -59,7 +59,7 @@ $ ->
       , 1500, mina.elastic
 
     types[0]()
-    pour()
+    pour() if options.slice is true
 
   getEll = (height) ->
     ra = r + (R - r) / h * height

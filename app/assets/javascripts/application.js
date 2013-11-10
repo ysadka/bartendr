@@ -6,6 +6,7 @@
 //= require foundation
 //= require snap
 //= require tumbler
+//= require responsive
 
 $(document).foundation();
 

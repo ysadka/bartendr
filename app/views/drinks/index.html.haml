@@ -1,9 +1,8 @@
-%h1#logo BARTENDR
+%h1#logo bartendr
 =form_tag do
   .row
-    .columns.small-8.small-centered
+    .columns.small-6.small-centered
       =text_field_tag('user-input', nil,{id:'search-bar'})
-  .row
-    .columns.small-3.small-centered
-      %input{type: 'submit', class: 'button small radius', value: 'Make my Drink!'}
+  .button-container
+    %input{type: 'submit', class: 'button tiny radius', value: 'Make my Drink!'}
 %br
