@@ -8,9 +8,31 @@ window.renderGlass = (options) ->
   R = 100
   r = 70
   open = 0
-  gmilk = 'l()#F4EEE6-#fff:50-#F4EEE6:50-#F4EEE6'
-  gcoffee = 'l()#60544F-#8c7a73:50-#60544F:50-#60544F'
-  gwater = 'l()#B4D6DB-#D6EDEE:50-#B4D6DB:50-#B4D6DB'
+
+  lighterHex = (num) ->
+    switch num
+      when num > 240 then Math.round(num * 1.045).toString 16
+      when num > 200 then Math.round(num * 1.09).toString 16
+      when num > 150 then Math.round(num * 1.18).toString 16
+      when num > 100 then Math.round(num * 1.20).toString 16
+      else Math.round(num * 1.45).toString 16
+
+  lighten = (color) ->
+    result = []
+    for hue in color
+      integer = parseInt "0x#{hue}", 16
+      result.push lighterHex(integer)
+    result.join ''
+
+  setGradients = (components) ->
+    svgGradients = []
+    for component in components
+      color = component.ingredient.hex_color
+      rgb = color.match /.{2}/g
+      svgGradients.push "l()##{color}-##{lighten rgb}-##{color}:50-##{color}"
+    svgGradients
+
+  gradients = setGradients(options.components) if options.components
 
   Snap.load 'demo.svg', (f) ->
     top = f.select '#top'
@@ -28,21 +50,22 @@ window.renderGlass = (options) ->
     o3 = (h - 70) / 3
     o2 = (h - 70) / 2
     cover = grp.ellipse(getEll(h - 60)).attr 'class', 'water'
-    ct1 = grp.path(cut(10, 10 + o3, 0)).attr
-      fill: gcoffee
-    ct2 = grp.path(cut(10 + o3, h - 60, 0)).attr
-      fill: gwater
+    if options.components
+      ct1 = grp.path(cut(10, 10 + o3, 0)).attr
+        fill: gradients[0]
+      ct2 = grp.path(cut(10 + o3, h - 60, 0)).attr
+        fill: gradients[1]
     middle = 10 + o3
     g = grp.g()
     dr = grp.path(doors(0)).attr 'class', 'doors'
     types =
       0: ->
         cover.attr 'class', 'water'
-        ct2.attr 'fill', gwater
+        ct2.attr 'fill', gradients[1]
         middle = 10 + o3
       72: ->
         cover.attr 'class', 'milk'
-        ct2.attr 'fill', gmilk
+        ct2.attr 'fill', gradients[1]
         middle = 10 + o3 * 2
 
     closeCup = (callback) ->
