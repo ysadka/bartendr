@@ -17,7 +17,7 @@ body, html {
 }
 
 .water {
-  fill: #D6EDEE;
+  fill: green;
   stroke: #60544F;
   opacity: 0;
 }
@@ -58,10 +58,11 @@ body, html {
   font-family: 'Josefin Sans', sans-serif;
 }
 
-svg {
-  /*border: 1px solid black;*/
-}
-
 .button-container {
   text-align: center;
+}
+
+#instructions-container {
+  text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
 }

@@ -1,5 +1,6 @@
 window.renderGlass = (options) ->
   s = Snap($(window).width(), 400)
+  $('svg').appendTo '#svg-container'
   p = 100 / 30
   h = 250
   x = 400
@@ -61,7 +62,6 @@ window.renderGlass = (options) ->
     types[0]()
     $('.water').css 'opacity', 1 if options.slice is true
     pour() if options.slice is true
-    renderDrink options.drinkName
 
   getEll = (height) ->
     ra = r + (R - r) / h * height
