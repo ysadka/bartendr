@@ -1,7 +1,6 @@
 $ ->
   window.renderGlass
     slice: false
-  renderTitle()
 
   $('form').on 'submit', (e) ->
     e.preventDefault()
@@ -11,6 +10,7 @@ $ ->
       window.renderGlass
         slice: true
         components: data.components
+        drinkName: data.name
 
   $(window).on 'resize', ->
     renderTitle()

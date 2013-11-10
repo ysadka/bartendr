@@ -59,8 +59,9 @@ window.renderGlass = (options) ->
       , 1500, mina.elastic
 
     types[0]()
+    $('.water').css 'opacity', 1 if options.slice is true
     pour() if options.slice is true
-    bubble()
+    renderDrink options.drinkName
 
   getEll = (height) ->
     ra = r + (R - r) / h * height
