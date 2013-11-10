@@ -86,3 +86,18 @@ body, html {
     }
   }
 }
+
+#glass-image {
+  height: 20;
+  width: 20;
+}
+
+#instructions-container {
+  text-align: center;
+
+  #instructions {
+    margin: auto;
+    width: 200px;
+    margin-bottom: 25px;
+  }
+}

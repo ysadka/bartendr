@@ -8,6 +8,9 @@
 #svg-container
 #instructions-container
   %h2#drink-name
-  =image_tag '', id: 'glass-image'
   %p#instructions
+#glass-container
+  =link_to '#', id: 'glass-link' do
+    =image_tag '', id: 'glass-image'
+    #glass-name
 #ingredients-container
