@@ -11,7 +11,7 @@ glass10 = Glass.create(name: 'Shot', img_url: 'http://upload.wikimedia.org/wikip
 
 ingredient1 = Ingredient.create(name: 'Rum', hex_color: 'e67e22')
 ingredient2 = Ingredient.create(name: 'Cherry Tomatoes', hex_color: 'e74c3c')
-ingredient3 = Ingredient.create(name: 'Mint', hex_color: '2ecc71')
+ingredient3 = Ingredient.create(name: 'Mint Leaves', hex_color: '2ecc71')
 ingredient4 = Ingredient.create(name: 'Coke', hex_color: '2c3e50')
 
 drink1 = Drink.create(name: 'the nate mistake', glass: glass1, preparation: 'Accidentally put some tomatoes in rum...')
