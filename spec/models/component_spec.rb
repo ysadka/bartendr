@@ -6,10 +6,10 @@ describe Component do
     it {expect(subject).to belong_to(:ingredient)}
   end
 
-  describe "#quantity_to_ounces" do
+  describe "#quantity_in_ounces" do
     it 'returns the quantity in ounces' do
       component = build(:component, quantity: 350)
-      expect(component.quantity_to_ounces).to eq 3.5
+      expect(component.quantity_in_ounces).to eq 3.5
     end
   end
 end
