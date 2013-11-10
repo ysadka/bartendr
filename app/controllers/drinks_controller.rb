@@ -4,7 +4,7 @@ class DrinksController < ApplicationController
   end
 
   def show
-    @drink = Drink.where(name: params[:name]).includes(:components, :ingredients).first
+    @drink = Drink.where(name: params[:name].capitalize).includes(:components, :ingredients).first
 
     render json: @drink, root: false
   end
