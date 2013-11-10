@@ -1,6 +1,6 @@
 class CreateComponents < ActiveRecord::Migration
   def change
-    create_table :components, id: false do |t|
+    create_table :components do |t|
       t.integer :drink_id
       t.integer :ingredient_id
       t.integer :quantity
