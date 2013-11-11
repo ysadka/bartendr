@@ -80,11 +80,11 @@ body, html {
     list-style-type: none;
     text-align: center;
     font-family: 'Josefin Sans', sans-serif;
-
-    h2 {
-      font-family: 'Josefin Sans', sans-serif;
-    }
   }
+}
+
+h2 {
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 #glass-image {
@@ -100,4 +100,12 @@ body, html {
     width: 200px;
     margin-bottom: 25px;
   }
+}
+
+#swatch {
+  height: 10px;
+  width: 10px;
+  border: 1px solid black;
+  display: inline-block;
+  margin-right: 5px;
 }
