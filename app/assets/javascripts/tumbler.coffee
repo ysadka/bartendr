@@ -11,7 +11,7 @@ window.renderGlass = (options) ->
 
   lighterHex = (num) ->
     switch num
-      when num then Math.round(num * 1.05).toString 16
+      when num then Math.round(num * 1.03).toString 16
       else Math.round(num * 1.1).toString 16
 
   lighten = (color) ->
@@ -53,10 +53,10 @@ window.renderGlass = (options) ->
     cuts = []
     calculateLayers = (ingredients) ->
       numberOfIngredients = ingredients.length
-      totalOunces = _.reduce ingredients, (memo, ingredient)-> 
+      totalOunces = _.reduce ingredients, (memo, ingredient)->
         memo + ingredient.quantity_in_ounces
-      , 0   
-      
+      , 0
+
       for ingredient, index in ingredients
         portionOfTotal = ingredient.quantity_in_ounces / totalOunces
         ohs.push (h - 70) * portionOfTotal
@@ -74,7 +74,7 @@ window.renderGlass = (options) ->
         cover.attr 'class', 'water'
         for index in [0...cuts.length]
           cuts[index].attr 'fill', gradients[index]
-  
+
     closeCup = (callback) ->
       Snap.animate 90, 0, (val) ->
         cuts[0].attr 'path', cut(10, middle, val)
