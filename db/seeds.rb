@@ -8,6 +8,7 @@ glass7 = Glass.create(name: 'Brandy Snifter', img_url: 'http://upload.wikimedia.
 glass8 = Glass.create(name: 'Champagne Flute', img_url: 'http://upload.wikimedia.org/wikipedia/commons/3/37/Flutesil.svg')
 glass9 = Glass.create(name: 'Pint', img_url: 'http://upload.wikimedia.org/wikipedia/commons/9/93/Pint_glass.svg')
 glass10 = Glass.create(name: 'Shot', img_url: 'http://upload.wikimedia.org/wikipedia/commons/4/40/Shot_glass.svg')
+glass11 = Glass.create(name: 'Old Fashioned', img_url: 'http://upload.wikimedia.org/wikipedia/commons/9/9f/Ofgcup.svg')
 
 ingredient1 = Ingredient.create(name: 'Rum', hex_color: 'e67e22')
 ingredient2 = Ingredient.create(name: 'Cherry Tomatoes', hex_color: 'e74c3c')
@@ -18,6 +19,8 @@ ingredient6 = Ingredient.create(name: 'Triple Sec', hex_color: 'f39c12')
 ingredient7 = Ingredient.create(name: 'Cranberry Juice', hex_color: 'e74c3c')
 ingredient8 = Ingredient.create(name: 'Lime Juice', hex_color: 'e74c3c')
 ingredient9 = Ingredient.create(name: 'Soda Water', hex_color: 'bdc3c7')
+ingredient10 = Ingredient.create(name: 'Coffee Liqueur', hex_color: 'b48f6a')
+ingredient11 = Ingredient.create(name: 'Coffee Cream', hex_color: 'f8f4f0')
 
 drink1 = Drink.create(name: 'the nate mistake', glass: glass9, preparation: 'Accidentally put some tomatoes in rum...')
 Component.create(drink: drink1, ingredient: ingredient1, quantity: 250)
@@ -37,3 +40,9 @@ Component.create(drink: drink4, ingredient: ingredient5, quantity: 150)
 Component.create(drink: drink4, ingredient: ingredient6, quantity: 75)
 Component.create(drink: drink4, ingredient: ingredient7, quantity: 75)
 Component.create(drink: drink4, ingredient: ingredient8, quantity: 100)
+
+drink5 = Drink.create(name: 'white russian', glass: glass11, preparation: 'Pour vodka and coffee liqueur over ice cubes in an old-fashioned glass. Fill with light cream and serve.')
+Component.create(drink: drink5, ingredient: ingredient5, quantity: 200)
+Component.create(drink: drink5, ingredient: ingredient10, quantity: 100)
+Component.create(drink: drink5, ingredient: ingredient11, quantity: 50)
+
