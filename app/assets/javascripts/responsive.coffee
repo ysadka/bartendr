@@ -68,6 +68,7 @@ renderServingGlass = (glass) ->
     width: 20
   $('#glass-name').text glass.name
   $('#glass-link').attr 'href', glass.purchase_url
+  $('#glass-link').attr 'target', '_blank'
   $('#glass-container').hide()
   $glass = $('#glass-container').clone()
   $('#ingredient-list').prepend $glass.show()
