@@ -2,7 +2,7 @@
 =form_tag do
   .row
     .columns.small-6.small-centered
-      =text_field_tag 'user-input', nil, id:'search-bar'
+      =text_field_tag 'user-input', nil, id:'search-bar', placeholder: 'What would you like to drink?'
   .button-container
     %input{type: 'submit', class: 'button tiny radius', value: 'Make my Drink!'}
 #svg-container

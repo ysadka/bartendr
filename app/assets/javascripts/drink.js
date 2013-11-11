@@ -21,7 +21,7 @@ function beginTyping () {
   }
 
   index = 0
-  sentencesToAutofill = ['What would you like to make?', 'Tom Collins', 'Side Car', 'Manhattan', 'Jager Bomb']
+  sentencesToAutofill = ['What would you like to make?', 'Tom Collins', 'Long Island', 'Manhattan', 'Jager Bomb']
   setInterval(function() {toType()}, 2500)
 
 }
