@@ -23,6 +23,7 @@ $ ->
     $('#ingredient-list').remove()
     $('#instructions').text ''
     $('#drink-name').text ''
+    $('.remove').text ''
     window.renderGlass
       slice: false
 
@@ -37,7 +38,7 @@ renderDescription = (drink) ->
   $('#instructions').text drink.preparation
 
 renderIngredients = (ingredients) ->
-  list = '<h2>Ingredients</h2><ul id="ingredient-list">'
+  list = '<h2 class="remove">Ingredients</h2><ul id="ingredient-list">'
   for liquor in ingredients
     list += "<li><div id='swatch' style='background-color:##{liquor.ingredient.hex_color}'></div> <a href='#{liquor.ingredient.purchase_url}'>#{liquor.ingredient.name}</a> #{liquor.quantity_in_ounces} oz</li>"
   list += '</ul>'

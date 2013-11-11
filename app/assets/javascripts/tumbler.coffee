@@ -11,8 +11,7 @@ window.renderGlass = (options) ->
 
   lighterHex = (num) ->
     switch num
-      when num > 250 then num.toString 16
-      when num > 240 then Math.round(num * 1.045).toString 16
+      when num then Math.round(num * 1.05).toString 16
       else Math.round(num * 1.1).toString 16
 
   lighten = (color) ->
