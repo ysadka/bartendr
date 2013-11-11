@@ -46,56 +46,55 @@ window.renderGlass = (options) ->
     h = 280
     s.add f.select('g')
     grp.path(outline(0, h)).attr 'class', 'outline'
-    o3 = (h - 70) / 3
-    o2 = (h - 70) / 2
+    cover = grp.ellipse(getEll(h - 60)).attr 'class', 'water'
 
+
+    ohs = []
+    cuts = []
     calculateLayers = (ingredients) ->
       numberOfIngredients = ingredients.length
       totalOunces = _.reduce ingredients, (memo, ingredient)-> 
         memo + ingredient.quantity_in_ounces
       , 0   
       
-      ohs = []
-      cuts = []
       for ingredient, index in ingredients
         portionOfTotal = ingredient.quantity_in_ounces / totalOunces
         ohs.push (h - 70) * portionOfTotal
+
         previousOh = ohs[index - 1] or 0
         cuts.push grp.path(cut(10 + previousOh, 10 + ohs[index], 0)).attr
           fill: gradients[index]
 
     calculateLayers options.components if options.components
 
-    cover = grp.ellipse(getEll(h - 60)).attr 'class', 'water'
-    if options.components
-      ct1 = grp.path(cut(10, 10 + o3, 0)).attr
-        fill: gradients[0]
-      ct2 = grp.path(cut(10 + o3, h - 60, 0)).attr
-        fill: gradients[1]
-    middle = 10 + o3
     g = grp.g()
     dr = grp.path(doors(0)).attr 'class', 'doors'
     types =
       0: ->
         cover.attr 'class', 'water'
-        ct2.attr 'fill', gradients[1]
-        middle = 10 + o3
-      72: ->
-        cover.attr 'class', 'milk'
-        ct2.attr 'fill', gradients[1]
-        middle = 10 + o3 * 2
-
+        for index in [0...cuts.length]
+          cuts[index].attr 'fill', gradients[index]
+  
     closeCup = (callback) ->
       Snap.animate 90, 0, (val) ->
-        ct1.attr 'path', cut(10, middle, val)
-        ct2.attr 'path', cut(middle, h - 60, val)
+        cuts[0].attr 'path', cut(10, middle, val)
+        cuts[1].attr 'path', cut(middle, h - 60, val)
         dr.attr 'path', doors(val)
       , 500, mina.easein, callback
 
     pour = ->
       Snap.animate 0, 90, (val) ->
-        ct1.attr 'path', cut(10, middle, val)
-        ct2.attr 'path', cut(middle, h - 60, val)
+        last = ohs.length
+        total = 0
+        for oh,index in ohs
+          if index is 0
+            cuts[index].attr 'path', cut(10, ohs[index], val)
+            total = total + ohs[index]
+          else if index is last-1
+            cuts[index].attr 'path', cut(total, h - 60, val)
+          else
+            cuts[index].attr 'path', cut(total, total+ohs[index], val)
+            total = total + ohs[index]
         dr.attr 'path', doors(val)
       , 1500, mina.elastic
 
