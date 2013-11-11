@@ -16,7 +16,7 @@ Front End
 - SCSS  
 
 
-The bartendr.me team wants to extend thanks to the team at [import.io](import.io)
+The bartendr.me team wants to extend thanks to the team at [import.io](http://www.import.io)
 
 
 
