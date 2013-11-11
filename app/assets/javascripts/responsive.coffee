@@ -1,4 +1,5 @@
 $ ->
+  renderTitle()
   window.renderGlass
     slice: false
 
