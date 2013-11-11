@@ -11,8 +11,10 @@ window.renderGlass = (options) ->
 
   lighterHex = (num) ->
     switch num
-      when num then Math.round(num * 1.03).toString 16
-      else Math.round(num * 1.1).toString 16
+      when num then hex = Math.round(num * 1.05).toString 16
+      else hex = Math.round(num * 1.1).toString 16
+    if hex.length is 1 then hex = "0#{hex}"
+    hex
 
   lighten = (color) ->
     result = []

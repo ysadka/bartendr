@@ -25,8 +25,3 @@ function beginTyping () {
   setInterval(function() {toType()}, 4000)
 
 }
-
-$("body").on("submit", function(e){
-  e.preventDefault();
-  alert("Implement Tumbler")
-})
