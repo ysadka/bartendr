@@ -16,6 +16,10 @@ $ ->
       renderServingGlass drink.glass if drink.glass
     ).fail ->
       $('svg').remove()
+      $('#ingredient-list').remove()
+      $('#instructions').text ''
+      $('#drink-name').text ''
+      $('.remove').text ''
       $('#svg-container').html '<br><br><p>No drinks found.</p>'
 
   $(window).on 'resize', ->
