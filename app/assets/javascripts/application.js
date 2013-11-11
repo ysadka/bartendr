@@ -7,8 +7,6 @@
 //= require snap
 //= require tumbler
 //= require responsive
-//= require drink
-
 
 $(document).foundation();
 

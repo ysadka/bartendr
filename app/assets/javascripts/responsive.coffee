@@ -1,19 +1,21 @@
 $ ->
   renderTitle()
   window.renderGlass
-    slice: false
+    slice: true
 
   $('form').on 'submit', (e) ->
     e.preventDefault()
+    $('body').load '/'
     search = $('#search-bar').val()
     $.get("/drinks/#{encodeURIComponent(search)}", (drink) ->
-      $('svg').remove()
-      window.renderGlass
-        slice: true
-        components: drink.components
-      renderDescription drink
-      renderIngredients drink.components
-      renderServingGlass drink.glass if drink.glass
+      $('#svg-container').load '/ #svg-container', ->
+        $('svg').remove()
+        window.renderGlass
+          slice: true
+          components: drink.components
+        renderDescription drink
+        renderIngredients drink.components
+        renderServingGlass drink.glass if drink.glass
     ).fail ->
       $('svg').remove()
       $('#ingredient-list').remove()
