@@ -28,7 +28,7 @@ Thanks
 The bartendr.me team wants to extend thanks to the team at [import.io](http://www.import.io)
 
 
-Useage
+Usage
 ---
 
 To run:
