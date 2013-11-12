@@ -6,7 +6,8 @@ Screen Shot
 ---
 ![Screen Shot](http://i.imgur.com/jshUINe.png)
 
-####Technology Used:
+Technology Used
+---
 
 Back End
 - Ruby 2.0
@@ -20,9 +21,15 @@ Front End
 - SCSS
 
 
+
+Thanks
+---
+
 The bartendr.me team wants to extend thanks to the team at [import.io](http://www.import.io)
 
 
+Useage
+---
 
 To run:
 ```sh
@@ -33,12 +40,8 @@ $ rails s
 ```
 
 
-
-
-
-
 You're being propped up
-============================
+---
 
 Consult the following repo for best practices and workflow protocol:
 
