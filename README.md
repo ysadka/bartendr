@@ -5,15 +5,15 @@ A site which breaks down the ingredients of a cocktail and provides you with lin
 ####Technology Used:
 
 Back End
-- Ruby 2.0  
-- Rails 4  
-- PG Dataabase 
+- Ruby 2.0
+- Rails 4
+- PG Database
 
 Front End
-- Zurb Foundation  
-- CoffeeScript  
-- ERB/HAML  
-- SCSS  
+- Zurb Foundation
+- CoffeeScript
+- ERB/HAML
+- SCSS
 
 
 The bartendr.me team wants to extend thanks to the team at [import.io](http://www.import.io)
