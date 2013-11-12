@@ -21,18 +21,11 @@ The bartendr.me team wants to extend thanks to the team at [import.io](http://ww
 
 
 To run:
-```
+```sh
 $ git clone <link to repo>
-```
-
-```
 $ cd bartendr
-```
-```
-rake db:create db:migrate db:seed
-```
-```
-rails s
+$ rake db:create db:migrate db:seed
+$ rails s
 ```
 
 
