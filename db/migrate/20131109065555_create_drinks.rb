@@ -4,6 +4,7 @@ class CreateDrinks < ActiveRecord::Migration
       t.string :name
       t.text :preparation
       t.integer :glass_id
+      t.string :url, default: ' '
 
       t.timestamps
     end
