@@ -2,6 +2,10 @@
 
 A site which breaks down the ingredients of a cocktail and provides you with links to purchase the ingredients you're missing
 
+Screen Shot
+---
+![Screen Shot](http://i.imgur.com/jshUINe.png)
+
 ####Technology Used:
 
 Back End
