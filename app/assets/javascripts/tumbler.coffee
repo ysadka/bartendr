@@ -106,9 +106,6 @@ window.renderGlass = (options) ->
       $('.water').attr 'fill', "##{top_layer.ingredient.hex_color}"
       pour()
 
-    debugger
-
-
   getEll = (height) ->
     ra = r + (R - r) / h * height
     cx: x
