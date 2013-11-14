@@ -47,7 +47,7 @@ renderDescription = (drink) ->
 renderIngredients = (ingredients) ->
   list = '<h2 class="remove">Ingredients</h2><ul id="ingredient-list">'
   for liquor in ingredients
-    list += "<li><div id='swatch' style='background-color:##{liquor.ingredient.hex_color}'></div> <a href='#{liquor.ingredient.purchase_url}' target='_blank'>#{liquor.ingredient.name}</a> #{liquor.quantity_in_ounces} oz</li>"
+    list += "<li><div id='swatch' style='background-color:##{liquor.ingredient.color.hex_code}'></div> <a href='#{liquor.ingredient.purchase_url}' target='_blank'>#{liquor.ingredient.name}</a> #{liquor.quantity_in_ounces} oz</li>"
   list += '</ul>'
   $('#ingredients-container').html list
   if $(window).width() > 900

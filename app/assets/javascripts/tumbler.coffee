@@ -26,7 +26,7 @@ window.renderGlass = (options) ->
   setGradients = (components) ->
     svgGradients = []
     for component in components
-      color = component.ingredient.hex_color
+      color = component.ingredient.color.hex_code
       rgb = color.match /.{2}/g
       svgGradients.push "l()##{color}-##{lighten rgb}:50-##{color}:50-##{color}"
     svgGradients
@@ -103,7 +103,7 @@ window.renderGlass = (options) ->
     if options.slice is true
       types[0]()
       $('.water').css 'opacity', 1
-      $('.water').attr 'fill', "##{top_layer.ingredient.hex_color}"
+      $('.water').attr 'fill', "##{top_layer.ingredient.color.hex_code}"
       pour()
 
   getEll = (height) ->
