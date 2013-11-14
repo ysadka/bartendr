@@ -1,3 +1,4 @@
 class IngredientSerializer < ActiveModel::Serializer
-  attributes :name, :hex_color, :purchase_url
+  attributes :name, :purchase_url
+  has_one :color
 end
