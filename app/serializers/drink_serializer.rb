@@ -4,6 +4,6 @@ class DrinkSerializer < ActiveModel::Serializer
   has_one :glass
 
   def name
-    object.name.split(' ').map(&:capitalize).join(' ')
+    object.name.titleize
   end
 end
