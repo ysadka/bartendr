@@ -1,38 +1,39 @@
 $ ->
-  renderTitle()
-  window.renderGlass
-    slice: true
+  if $('#search-bar').length > 0
+    renderTitle()
+    window.renderGlass
+      slice: true
 
-  $('form').on 'submit', (e) ->
-    e.preventDefault()
-    $('body').load '/'
-    search = $('#search-bar').val()
-    $.get("/drinks/#{encodeURIComponent(search)}", (drink) ->
-      $('#svg-container').load '/ #svg-container', ->
+    $('form').on 'submit', (e) ->
+      e.preventDefault()
+      $('body').load '/'
+      search = $('#search-bar').val()
+      $.get("/drinks/#{encodeURIComponent(search)}", (drink) ->
+        $('#svg-container').load '/ #svg-container', ->
+          $('svg').remove()
+          window.renderGlass
+            slice: true
+            components: drink.components
+          renderDescription drink
+          renderIngredients drink.components
+          renderServingGlass drink.glass if drink.glass
+      ).fail ->
         $('svg').remove()
-        window.renderGlass
-          slice: true
-          components: drink.components
-        renderDescription drink
-        renderIngredients drink.components
-        renderServingGlass drink.glass if drink.glass
-    ).fail ->
+        $('#ingredient-list').remove()
+        $('#instructions').text ''
+        $('#drink-name').text ''
+        $('.remove').text ''
+        $('#svg-container').html '<br><br><p>No drinks found.</p>'
+
+    $(window).on 'resize', ->
+      renderTitle()
       $('svg').remove()
       $('#ingredient-list').remove()
       $('#instructions').text ''
       $('#drink-name').text ''
       $('.remove').text ''
-      $('#svg-container').html '<br><br><p>No drinks found.</p>'
-
-  $(window).on 'resize', ->
-    renderTitle()
-    $('svg').remove()
-    $('#ingredient-list').remove()
-    $('#instructions').text ''
-    $('#drink-name').text ''
-    $('.remove').text ''
-    window.renderGlass
-      slice: false
+      window.renderGlass
+        slice: false
 
 renderTitle = ->
   if $(window).width() < 700
@@ -42,7 +43,8 @@ renderTitle = ->
 
 renderDescription = (drink) ->
   $('#drink-name').text drink.name
-  $('#instructions').text drink.preparation
+  $('#instructions').html drink.preparation +
+    '<br><br><a href="/payments/new">Thanks, bartendr!</a>'
 
 renderIngredients = (ingredients) ->
   list = '<h2 class="remove">Ingredients</h2><ul id="ingredient-list">'

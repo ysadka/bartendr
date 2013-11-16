@@ -1,0 +1,40 @@
+#tipjar
+  %h1 Tips welcome
+
+= form_tag payments_path, method: :post, id: 'payment-form' do
+  %span.payment-errors
+  .form-row
+    = label_tag :contribution, 'Contribution (USD)'
+    = number_field_tag :contribution
+  .form-row
+    = label_tag :card_number, 'Card Number'
+    = text_field_tag :card_number, nil, size: 20, data: {'stripe' => 'number'}
+  .form-row
+    = label_tag :cvc, 'CVC'
+    = text_field_tag :cvc, nil, size: 4, data: {'stripe' => 'cvc'}
+  .form-row
+    = label_tag :expiry, 'Expiration'
+    = text_field_tag :month, nil, size: 2, data: {'stripe' => 'exp-month'}, placeholder: 'MM'
+    = text_field_tag :year, nil, size: 4, data: {'stripe' => 'exp-year'}, placeholder: 'YYYY'
+  = button_tag :submit
+
+= content_for :javascript do
+  = javascript_include_tag 'https://js.stripe.com/v2/'
+  :coffee
+    Stripe.setPublishableKey "#{ENV['PUBLISHABLE_KEY']}"
+    $('#payment-form').submit (event) ->
+      $form = $(@)
+      $form.find('button').prop 'disabled', true
+      Stripe.card.createToken $form, stripeResponseHandler
+      false
+
+    stripeResponseHandler = (status, response) ->
+      $form = $('#payment-form')
+
+      if response.error
+        $form.find('.payment-errors').text response.error.message
+        $form.find('button').prop 'disabled', false
+      else
+        token = response.id
+        $form.append $('<input type="hidden" name="stripeToken" />').val(token)
+        $form.get(0).submit()

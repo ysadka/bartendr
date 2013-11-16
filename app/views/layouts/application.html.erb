@@ -31,8 +31,11 @@
   <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:600' rel='stylesheet' type='text/css'>
 </head>
 <body class="<%%= body_class %>">
-  <%= render 'flashes' -%>
+  <% if flash[:notice] || flash[:error] %>
+    <%= render 'application/flashes' -%>
+  <% end %>
   <%= yield %>
   <%= javascript_include_tag "application" %>
 </body>
+  <%= yield :javascript %>
 </html>

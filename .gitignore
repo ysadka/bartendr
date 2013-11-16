@@ -13,3 +13,6 @@ rerun.txt
 tags
 tmp/*
 tmp/**/*
+
+# Ignore application configuration
+config/application.yml
