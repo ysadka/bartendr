@@ -22,20 +22,7 @@ desc "Pass a CSV of ingredients to create respective entries in the database"
 task :parse_ingredients, [:filename] => :environment do |t, args|
   CSV.foreach(args.filename, headers: true, header_converters: :symbol) do |row|
     drink = Drink.find_by(url: row[:url])
-    next unless drink # skip to the next row if it can't find a matching drink
-    name = row[:ingredient].to_s
-    ingredient = nil
-
-    INGREDIENTS_FILTER.each do |k, v|
-      ingredient = Ingredient.find_by(name: v) and break if name.match(k)
-    end
-
-    ingredient = Ingredient.find_by(name: name.titleize) unless ingredient
-
-    unless ingredient
-      color = Color.all.sample # random seeded color
-      ingredient = Ingredient.create(name: name.titleize, color: color)
-    end
+    next unless drink # skip to next row if can't find matching drink
 
     next unless row[:quantity] # the scraper data is sorta error prone
 
@@ -48,6 +35,21 @@ task :parse_ingredients, [:filename] => :environment do |t, args|
     # filter for different measurements and convert to ounces
     QUANTITIES_FILTER.each do |k, v|
       quantity *= v and break if row[:quantity].match(k)
+    end
+
+    name = row[:ingredient].to_s
+    ingredient = nil
+
+    # filter for already seeded ingredients
+    INGREDIENTS_FILTER.each do |k, v|
+      ingredient = Ingredient.find_by(name: v) and break if name.match(k)
+    end
+
+    ingredient = Ingredient.find_by(name: name.titleize) unless ingredient
+
+    unless ingredient
+      color = Color.all.sample # random seeded color
+      ingredient = Ingredient.create(name: name.titleize, color: color)
     end
 
     begin
