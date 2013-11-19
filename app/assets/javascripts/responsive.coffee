@@ -43,8 +43,11 @@ renderTitle = ->
 
 renderDescription = (drink) ->
   $('#drink-name').text drink.name
-  $('#instructions').html drink.preparation +
-    '<br><br><a href="/payments/new">Thanks, bartendr!</a>'
+  if $('#tipjar').length > 0
+    $('#instructions').html drink.preparation +
+      '<br><br><a href="/payments/new">Thanks, bartendr!</a>'
+  else
+    $('#instructions').html drink.preparation
 
 renderIngredients = (ingredients) ->
   list = '<h2 class="remove">Ingredients</h2><ul id="ingredient-list">'
