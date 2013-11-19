@@ -1,4 +1,5 @@
 class DrinksController < ApplicationController
+  before_filter :flag_tipjar
 
   def index
   end
@@ -11,5 +12,11 @@ class DrinksController < ApplicationController
     else
       render json: @drink, root: false
     end
+  end
+
+  private
+
+  def flag_tipjar
+    @tipjar = $rollout.active?(:payments)
   end
 end
