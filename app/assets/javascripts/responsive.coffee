@@ -15,7 +15,7 @@ $ ->
             slice: true
             components: drink.components
           renderDescription drink
-          renderIngredients drink.components
+          renderIngredients drink.components.reverse()
           renderServingGlass drink.glass if drink.glass
       ).fail ->
         $('svg').remove()
