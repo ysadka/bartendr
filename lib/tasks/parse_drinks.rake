@@ -2,7 +2,6 @@ require 'csv'
 require './lib/assets/glass_mapping'
 
 desc "Pass a CSV of drinks to create respective entries in the database"
-
 task :parse_drinks, [:filename] => :environment do |t, args|
   CSV.foreach(args.filename, headers: true, header_converters: :symbol) do |row|
     glass_number = row[:glass].match(/glasses\/(.*)\//).captures.first.to_i
