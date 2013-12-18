@@ -69,9 +69,16 @@ body, html {
 #instructions-container {
   text-align: center;
   font-family: 'Josefin Sans', sans-serif;
+  max-width: 275px;
 
   h2 {
     font-family: 'Josefin Sans', sans-serif;
+  }
+
+  #instructions {
+    margin: auto;
+    width: 200px;
+    margin-bottom: 25px;
   }
 }
 
@@ -92,16 +99,6 @@ h2 {
 #glass-image {
   height: 20;
   width: 20;
-}
-
-#instructions-container {
-  text-align: center;
-
-  #instructions {
-    margin: auto;
-    width: 200px;
-    margin-bottom: 25px;
-  }
 }
 
 #swatch {
